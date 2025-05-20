@@ -1,0 +1,151 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+/* Fonts */
+
+@font-face {
+    font-family: 'robotoitalic';
+    src: url('./fonts/roboto-italic-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('./fonts/roboto-italic-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./fonts/roboto-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('./fonts/roboto-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Styling */
+
+body {
+  font-family: 'robotoregular', 'Times New Roman', Times, serif;
+}
+
+.main-container {
+  height: 100vh;
+  display: grid;
+  grid: 1fr 8fr 1fr / 1fr;
+  grid-template-areas: 
+  "title"
+  "content"
+  "results";
+}
+
+.title {
+  display: flex;
+  grid-area: title;
+  justify-content: center;
+  align-items: center;
+  background-color: #90d5e6;
+  box-shadow: 0px 1px 9px 0px grey;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  display: grid;
+  grid: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 10px;
+  width: 350px;
+  height: 350px;
+  background-color: #eee;
+  display: none;
+}
+
+.square {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.square:hover {
+  cursor: pointer;
+  background-color: #f3f3f3;
+  margin: 5px;
+}
+
+.results {
+  background-color: #90d5e6;
+  box-shadow: 0px -1px 9px 0px grey
+}
+
+form > div {
+  padding: 5px;
+}
+
+.user-form-container {
+  background-color: #eee;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
